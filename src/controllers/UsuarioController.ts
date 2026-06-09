@@ -3,24 +3,24 @@ import Database from "../config/database";
 import Usuario from "../models/Usuario";
 
 class UsuarioController {
-  public async crear(req: Request, res: Response) {
-    try {
-      const { nombre, email } = req.body;
+//   public async crear(req: Request, res: Response) {
+//     try {
+//       const { nombre, email } = req.body;
 
-      const usuario = new Usuario(nombre, email);
-      const db = Database.getInstance().getConnection();
+//       const usuario = new Usuario(nombre, email);
+//       const db = Database.getInstance().getConnection();
 
-      await db.query(
-        "INSERT INTO usuarios(nombre, email) VALUES (?, ?)",
-        [usuario.getNombre(), usuario.getEmail()]
-      );
+//       await db.query(
+//         "INSERT INTO usuarios(nombre, email) VALUES (?, ?)",
+//         [usuario.getNombre(), usuario.getEmail()]
+//       );
 
-      res.json({ mensaje: "Usuario creado" });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ mensaje: "Error al crear usuario", error });
-    }
-  }
+//       res.json({ mensaje: "Usuario creado" });
+//     } catch (error) {
+//       console.error(error);
+//       res.status(500).json({ mensaje: "Error al crear usuario", error });
+//     }
+//   }
 
   public async listar(req: Request, res: Response) {
     try {
@@ -69,6 +69,57 @@ class UsuarioController {
     res.status(500).json({ mensaje: "Error al eliminar usuario", error });
   }
 }
+
+  public async crear(
+      req: Request,
+      res: Response
+  ): Promise<void> {
+
+      try {
+          const { nombre, precio } = req.body;
+
+          const db = Database.getInstance().getConnection();
+
+          const rutaImagen = req.file
+              ? `/src/uploads/perfiles${req.file.filename}`
+              : null;
+
+          await db.query(
+              `
+              INSERT INTO usuarios
+              (
+                  nombre,
+                  precio,
+                  imagen
+              )
+              VALUES
+              (
+                  ?,
+                  ?,
+                  ?
+              )
+              `,
+              [
+                  nombre,
+                  precio,
+                  rutaImagen
+              ]
+          );
+
+          res.status(201).json({
+              mensaje: "Producto creado",
+              imagen: rutaImagen
+          });
+
+      } catch (error) {
+
+          res.status(500).json({
+              mensaje: "Error interno",
+              error
+          });
+
+      }
+  }
 }
 
 export default new UsuarioController();
