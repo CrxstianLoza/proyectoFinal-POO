@@ -17,7 +17,7 @@ Crear archivo .env con:
 
 DB_HOST=localhost
 DB_USER=root
-DB_PASSWORD=backopp9
+DB_PASSWORD=tucontraseña
 DB_NAME=db_appfirst
 DB_PORT=3306
 
