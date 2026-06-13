@@ -1,19 +1,21 @@
 import express from "express";
 import cors from "cors";
-import usuarioRoutes from "./routes/usuarioRoutes";
-import productoRoutes from "./routes/productoRoutes";
 
+import estudianteRoutes from "./routes/estudianteRoutes";
+import figuraRoutes from "./routes/figuraRoutes";
+import preguntaRoutes from "./routes/preguntaRoutes";
+import respuestaRoutes from "./routes/respuestaRoutes";
+import resultadoRoutes from "./routes/resultadoRoutes";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.use("/usuarios", usuarioRoutes);
-app.use("/productos", productoRoutes);
+app.use("/estudiantes", estudianteRoutes);
+app.use("/figuras", figuraRoutes);
+app.use("/preguntas", preguntaRoutes);
+app.use("/respuestas", respuestaRoutes);
+app.use("/resultados", resultadoRoutes);
 
 export default app;
-
-app.listen(3000, () => {
-  console.log("Servidor corriendo en puerto 3000");
-});

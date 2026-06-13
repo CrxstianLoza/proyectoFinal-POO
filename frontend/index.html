@@ -1,39 +1,951 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lección 1 - Segmentos</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Lista de usuarios</h1>
+  <section class="seccion inicio" id="pantallaInicio">
+    <div class="tarjeta-inicio">
+      <h2>¡Bienvenido!</h2>
+      <p>Escribe tu nombre para comenzar la lección.</p>
 
-    <button onclick="ObtenerUsuarios()">
-    Obtener usuarios
-    </button>
+      <div class="formulario-inicio">
+        <input type="text" id="nombreEstudiante" placeholder="Escribe tu nombre" />
+        <button onclick="crearEstudiante()">Iniciar actividad</button>
+      </div>
 
-    <ul id="lista-usuarios"></ul>
+      <p id="mensajeInicio" class="mensaje"></p>
+    </div>
+  </section>
 
-    <script>
-    async function ObtenerUsuarios() {
-        const respuesta = await fetch("http://localhost:3000/usuarios");
+  <div id="leccionCompleta" class="oculto-pagina">
+    <header class="header" id="leccion">
+      <div>
+        <p class="unidad">Unidad 3 · Lección 1</p>
+        <h1>Aprendamos sobre figuras planas</h1>
+        <p class="descripcion">
+          Aprende qué es una línea recta y qué es un segmento mediante actividades interactivas.
+        </p>
+      </div>
+    </header>
 
-        const datos = await respuesta.json();
+    <section class="encabezado-revision">
+      <div>
+        <p class="unidad">Revisión de respuestas</p>
+        <h1>Aprendamos sobre figuras planas</h1>
+        <button class="btn-secundario" onclick="regresarAPuntaje()">Regresar a puntaje</button>
+      </div>
+    </section>
 
-        console.log(datos);
+    <main>
+      <article class="subleccion subleccion-11" id="subleccion-11">
+        <div class="encabezado-subleccion">
+          <span class="etiqueta-subleccion">1.1</span>
+          <h2>Identifiquemos y tracemos segmentos</h2>
+        </div>
 
-        const lista = document.getElementById("lista-usuarios");
+        <section class="seccion bloque-teorico bloque-analiza">
+        <div class="titulo-bloque">
+          <span>Analiza</span>
+          <h2>Observa la situación</h2>
+        </div>
 
-        lista.innerHTML = "";
+        <p class="texto">
+          Una motocicleta esta pasando por una calle recta. También unimos la casa de Antonio
+          con la casa de Marta usando una línea.
+        </p>
 
-        datos.forEach(usuario => {
-        lista.innerHTML += `
-            <li>
-            ${usuario.nombre} - ${usuario.email}
-            </li>
-        `;
-        });
-    }
-    </script>
+        <div class="escena">
+          <div class="moto">🏍️</div>
+          <div class="linea-calle"></div>
+
+          <div class="casas">
+            <div class="casa">
+              <div class="icono-casa">🏠</div>
+              <p>Casa de Antonio</p>
+            </div>
+
+            <div class="casa">
+              <div class="icono-casa">🏠</div>
+              <p>Casa de Marta</p>
+            </div>
+          </div>
+
+          <div class="segmento-casas">
+            <span class="punto"></span>
+            <div class="linea-segmento"></div>
+            <span class="punto"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion bloque-teorico bloque-soluciona">
+        <div class="titulo-bloque">
+          <span>Soluciona</span>
+          <h2>Representamos las líneas</h2>
+        </div>
+
+        <div class="grid-dos">
+          <div class="tarjeta">
+            <h3>a. Calle de la motocicleta</h3>
+            <p>La calle continúa en una misma dirección, por eso representa una línea recta.</p>
+
+            <div class="ejemplo-linea">
+              <div class="linea-infinita"></div>
+            </div>
+          </div>
+
+          <div class="tarjeta">
+            <h3>b. Camino entre dos casas</h3>
+            <p>El camino tiene un punto inicial y un punto final, por eso representa un segmento.</p>
+
+            <div class="ejemplo-segmento">
+              <span class="punto"></span>
+              <div class="linea-segmento"></div>
+              <span class="punto"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion comprende bloque-teorico bloque-comprende">
+        <div class="titulo-bloque">
+          <span>Comprende</span>
+          <h2>Ideas importantes</h2>
+        </div>
+
+        <div class="conceptos">
+          <div class="concepto">
+            <div class="numero">1</div>
+            <p>Una línea recta puede extenderse en una misma dirección.</p>
+          </div>
+
+          <div class="concepto">
+            <div class="numero">2</div>
+            <p>Un segmento es una parte de una línea recta limitada por dos puntos.</p>
+          </div>
+
+          <div class="concepto">
+            <div class="numero">3</div>
+            <p>Para trazar un segmento se colocan dos puntos y se unen con una línea recta.</p>
+          </div>
+        </div>
+
+        <div class="grafico-segmento">
+          <div class="plano">
+            <span class="punto punto-a"></span>
+            <span class="punto punto-b"></span>
+            <div class="linea-ab"></div>
+            <span class="letra-a">A</span>
+            <span class="letra-b">B</span>
+          </div>
+          <p>Este es el segmento AB.</p>
+        </div>
+      </section>
+
+      <section class="seccion actividad bloque-resuelve bloque-evaluable">
+        <div class="titulo-bloque">
+          <span>Resuelve</span>
+          <h2>Actividad 1: Completa las respuestas</h2>
+        </div>
+
+        <div class="pregunta">
+          <label>1. La calle por donde pasa la motocicleta representa una:</label>
+          <select id="respuesta1">
+            <option value="">Selecciona una respuesta</option>
+            <option value="linea recta">Línea recta</option>
+            <option value="segmento">Segmento</option>
+            <option value="curva">Curva</option>
+          </select>
+        </div>
+
+        <div class="pregunta">
+          <label>2. El camino entre la casa de Antonio y la casa de Marta representa un:</label>
+          <select id="respuesta2">
+            <option value="">Selecciona una respuesta</option>
+            <option value="linea recta">Línea recta</option>
+            <option value="segmento">Segmento</option>
+            <option value="curva">Curva</option>
+          </select>
+        </div>
+
+        <div class="pregunta">
+          <label>3. Un segmento está limitado por:</label>
+          <select id="respuesta3">
+            <option value="">Selecciona una respuesta</option>
+            <option value="un punto">Un punto</option>
+            <option value="dos puntos">Dos puntos</option>
+            <option value="ningun punto">Ningún punto</option>
+          </select>
+        </div>
+
+        <p id="resultadoActividad1" class="resultado"></p>
+      </section>
+
+      <section class="seccion actividad bloque-resuelve bloque-evaluable">
+        <div class="titulo-bloque">
+          <span>Resuelve</span>
+          <h2>Actividad 2: Identifica el segmento</h2>
+        </div>
+
+        <p class="texto">
+          Observa las imágenes y selecciona cuál representa un segmento.
+        </p>
+
+        <div class="opciones-visuales">
+          <button class="opcion" onclick="seleccionarOpcion('a', event)">
+            <span class="linea-infinita opcion-linea"></span>
+          </button>
+
+          <button class="opcion" onclick="seleccionarOpcion('b', event)">
+            <div class="opcion-segmento">
+              <span class="punto"></span>
+              <span class="linea-segmento"></span>
+              <span class="punto"></span>
+            </div>
+          </button>
+
+          <button class="opcion" onclick="seleccionarOpcion('c', event)">
+            <span class="curva"></span>
+          </button>
+        </div>
+
+        <p id="resultadoActividad2" class="resultado"></p>
+      </section>
+
+      <section class="seccion actividad actividad-conexion bloque-resuelve bloque-evaluable">
+        <div class="titulo-bloque">
+          <span>Resuelve</span>
+          <h2>Actividad 3: Traza el segmento AB</h2>
+        </div>
+
+        <p class="texto">
+          Toca el primer punto y luego toca el segundo punto para formar el segmento indicado.
+        </p>
+
+        <div class="indicacion-segmento">
+          Forma el segmento AB
+        </div>
+
+        <div class="plano-conexion" data-actividad="3">
+          <svg class="lineas-conexion"></svg>
+
+          <button class="punto-conexion" data-punto="A" style="left: 20%; top: 40%;">A</button>
+          <button class="punto-conexion" data-punto="B" style="left: 75%; top: 40%;">B</button>
+          <button class="punto-conexion" data-punto="C" style="left: 35%; top: 70%;">C</button>
+          <button class="punto-conexion" data-punto="D" style="left: 65%; top: 70%;">D</button>
+        </div>
+
+        <button class="btn-secundario btn-reset-conexion" onclick="volverASeleccionar(3)">Volver a seleccionar</button>
+        <p id="resultadoActividad3" class="resultado-conexion"></p>
+      </section>
+
+      <section class="seccion actividad actividad-conexion bloque-resuelve bloque-evaluable">
+        <div class="titulo-bloque">
+          <span>Resuelve</span>
+          <h2>Actividad 4: Traza el segmento CD</h2>
+        </div>
+
+        <p class="texto">
+          Toca dos puntos para unirlos y formar el segmento indicado.
+        </p>
+
+        <div class="indicacion-segmento">
+          Forma el segmento CD
+        </div>
+
+        <div class="plano-conexion" data-actividad="4">
+          <svg class="lineas-conexion"></svg>
+
+          <button class="punto-conexion" data-punto="A" style="left: 22%; top: 35%;">A</button>
+          <button class="punto-conexion" data-punto="B" style="left: 72%; top: 32%;">B</button>
+          <button class="punto-conexion" data-punto="C" style="left: 28%; top: 68%;">C</button>
+          <button class="punto-conexion" data-punto="D" style="left: 78%; top: 66%;">D</button>
+        </div>
+
+        <button class="btn-secundario btn-reset-conexion" onclick="volverASeleccionar(4)">Volver a seleccionar</button>
+        <p id="resultadoActividad4" class="resultado-conexion"></p>
+      </section>
+
+      </article>
+
+      <article class="subleccion subleccion-12" id="subleccion-12">
+        <div class="encabezado-subleccion">
+          <span class="etiqueta-subleccion">1.2</span>
+          <h2>Conozcamos los triángulos y cuadriláteros</h2>
+        </div>
+
+        <section class="seccion seccion-geometria bloque-teorico bloque-analiza">
+        <div class="titulo-bloque">
+          <span>Analiza</span>
+          <h2>Figuras formadas por segmentos</h2>
+        </div>
+
+        <p class="texto">
+          Las siguientes figuras se forman por segmentos uniéndose cada dos puntos.¿Cuántos segmentos tiene cada figura?
+        </p>
+
+        <div class="figuras-analiza">
+          <div class="tarjeta figura-card">
+            <h3>Figura a</h3>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Triángulo irregular">
+              <polygon points="36,124 98,24 184,110" class="figura-poligono" />
+              <circle cx="36" cy="124" r="6" class="figura-punto" />
+              <circle cx="98" cy="24" r="6" class="figura-punto" />
+              <circle cx="184" cy="110" r="6" class="figura-punto" />
+            </svg>
+          </div>
+
+          <div class="tarjeta figura-card">
+            <h3>Figura b</h3>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Cuadrilátero irregular">
+              <polygon points="40,116 72,28 174,42 188,118" class="figura-poligono" />
+              <circle cx="40" cy="116" r="6" class="figura-punto" />
+              <circle cx="72" cy="28" r="6" class="figura-punto" />
+              <circle cx="174" cy="42" r="6" class="figura-punto" />
+              <circle cx="188" cy="118" r="6" class="figura-punto" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion seccion-geometria solucion-geometria bloque-teorico bloque-soluciona">
+        <div class="titulo-bloque">
+          <span>Soluciona</span>
+          <h2>Contamos segmentos para clasificar</h2>
+        </div>
+
+        <div class="bloque-destacado">
+          <p>
+            La figura a esta formada por 3 segmentos, y se clasifica como triángulo. La figura b esta formada por 4 segmentos, y se clasifica como cuadrilátero.
+          </p>
+        </div>
+      </section>
+
+      <section class="seccion comprende seccion-geometria bloque-teorico bloque-comprende">
+        <div class="titulo-bloque">
+          <span>Comprende</span>
+          <h2>Triángulos y cuadriláteros</h2>
+        </div>
+
+        <div class="conceptos">
+          <div class="concepto">
+            <div class="numero">1</div>
+            <p>A las figuras que se forman con 3 segmentos se les llama triángulos.</p>
+          </div>
+
+          <div class="concepto">
+            <div class="numero">2</div>
+            <p>A las figuras que se forman con 4 segmentos se les llama cuadriláteros.</p>
+          </div>
+        </div>
+
+        <div class="ejemplos-geometria">
+          <div class="tarjeta ejemplo-geometria">
+            <h3>Triángulo</h3>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Triángulo">
+              <polygon points="40,120 110,28 182,120" class="figura-poligono" />
+            </svg>
+          </div>
+
+          <div class="tarjeta ejemplo-geometria">
+            <h3>Cuadrilátero</h3>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Cuadrilátero">
+              <polygon points="46,38 176,38 176,118 46,118" class="figura-poligono" />
+            </svg>
+          </div>
+
+          <div class="tarjeta ejemplo-geometria ejemplo-pequeno">
+            <h3>No es triángulo</h3>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Figura que no es triángulo">
+              <polyline points="34,110 86,44 142,100 188,54" class="figura-abierta" />
+            </svg>
+          </div>
+
+          <div class="tarjeta ejemplo-geometria ejemplo-pequeno">
+            <h3>No es cuadrilátero</h3>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Figura que no es cuadrilátero">
+              <path d="M42 110 C70 36, 150 36, 184 110" class="figura-curva" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion actividad actividad-figuras bloque-resuelve bloque-evaluable">
+        <div class="titulo-bloque">
+          <span>Resuelve</span>
+          <h2>Actividad 5: Clasifica las figuras</h2>
+        </div>
+
+        <p class="texto">
+          Para cada una de las siguientes figuras respondelo siguiente
+        </p>
+
+        <div class="actividad-figuras-grid">
+          <div class="tarjeta tarjeta-actividad-figura">
+            <h3>Figura A</h3>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Triángulo irregular para responder">
+              <polygon points="36,118 92,26 184,104" class="figura-poligono" />
+              <circle cx="36" cy="118" r="6" class="figura-punto" />
+              <circle cx="92" cy="26" r="6" class="figura-punto" />
+              <circle cx="184" cy="104" r="6" class="figura-punto" />
+            </svg>
+
+            <div class="pregunta pregunta-compacta">
+              <label>¿Cuántos segmentos tiene?</label>
+              <select id="actividad5FiguraASegmentos">
+                <option value="">Selecciona</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+
+            <div class="pregunta pregunta-compacta">
+              <label>¿Cómo se llama esta figura?</label>
+              <select id="actividad5FiguraANombre">
+                <option value="">Selecciona</option>
+                <option value="triangulo">Triángulo</option>
+                <option value="cuadrilatero">Cuadrilátero</option>
+                <option value="linea recta">Línea recta</option>
+                <option value="curva">Curva</option>
+              </select>
+            </div>
+
+            <p id="resultadoActividad5FiguraA" class="resultado"></p>
+          </div>
+
+          <div class="tarjeta tarjeta-actividad-figura">
+            <h3>Figura B</h3>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Cuadrilátero para responder">
+              <polygon points="44,34 176,34 176,118 44,118" class="figura-poligono" />
+              <circle cx="44" cy="34" r="6" class="figura-punto" />
+              <circle cx="176" cy="34" r="6" class="figura-punto" />
+              <circle cx="176" cy="118" r="6" class="figura-punto" />
+              <circle cx="44" cy="118" r="6" class="figura-punto" />
+            </svg>
+
+            <div class="pregunta pregunta-compacta">
+              <label>¿Cuántos segmentos tiene?</label>
+              <select id="actividad5FiguraBSegmentos">
+                <option value="">Selecciona</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+
+            <div class="pregunta pregunta-compacta">
+              <label>¿Cómo se llama esta figura?</label>
+              <select id="actividad5FiguraBNombre">
+                <option value="">Selecciona</option>
+                <option value="triangulo">Triángulo</option>
+                <option value="cuadrilatero">Cuadrilátero</option>
+                <option value="linea recta">Línea recta</option>
+                <option value="curva">Curva</option>
+              </select>
+            </div>
+
+            <p id="resultadoActividad5FiguraB" class="resultado"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion actividad actividad-seleccion-figuras bloque-resuelve bloque-evaluable">
+        <div class="titulo-bloque">
+          <span>Resuelve</span>
+          <h2>Actividad 6: Para las siguientes figuras, selecciona los triángulos</h2>
+        </div>
+
+        <div class="figuras-seleccionables">
+          <button class="opcion-figura" data-tipo="triangulos" data-figura="a" onclick="seleccionarFiguraMultiple('triangulos', 'a', event)">
+            <span class="letra-figura">a.</span>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Triángulo cerrado irregular">
+              <polygon points="38,118 94,28 184,108" class="figura-poligono" />
+            </svg>
+          </button>
+
+          <button class="opcion-figura" data-tipo="triangulos" data-figura="b" onclick="seleccionarFiguraMultiple('triangulos', 'b', event)">
+            <span class="letra-figura">b.</span>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Figura con lado curvo">
+              <path d="M40 116 L102 28 C150 42, 176 78, 184 114 Z" class="figura-curva-cerrada" />
+            </svg>
+          </button>
+
+          <button class="opcion-figura" data-tipo="triangulos" data-figura="c" onclick="seleccionarFiguraMultiple('triangulos', 'c', event)">
+            <span class="letra-figura">c.</span>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Triángulo cerrado">
+              <polygon points="42,116 110,30 178,116" class="figura-poligono" />
+            </svg>
+          </button>
+
+          <button class="opcion-figura" data-tipo="triangulos" data-figura="d" onclick="seleccionarFiguraMultiple('triangulos', 'd', event)">
+            <span class="letra-figura">d.</span>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Figura abierta parecida a triángulo">
+              <polyline points="42,116 108,30 178,116" class="figura-abierta" />
+            </svg>
+          </button>
+        </div>
+
+        <p id="resultadoActividadTriangulos" class="resultado"></p>
+      </section>
+
+      <section class="seccion actividad actividad-seleccion-figuras bloque-resuelve bloque-evaluable">
+        <div class="titulo-bloque">
+          <span>Resuelve</span>
+          <h2>Actividad 7: Para las siguientes figuras, selecciona los cuadriláteros</h2>
+        </div>
+
+        <div class="figuras-seleccionables">
+          <button class="opcion-figura" data-tipo="cuadrilateros" data-figura="a" onclick="seleccionarFiguraMultiple('cuadrilateros', 'a', event)">
+            <span class="letra-figura">a.</span>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Rectángulo cerrado">
+              <polygon points="42,38 178,38 178,118 42,118" class="figura-poligono" />
+            </svg>
+          </button>
+
+          <button class="opcion-figura" data-tipo="cuadrilateros" data-figura="b" onclick="seleccionarFiguraMultiple('cuadrilateros', 'b', event)">
+            <span class="letra-figura">b.</span>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Cuadrilátero irregular cerrado">
+              <polygon points="44,118 72,34 170,46 188,116" class="figura-poligono" />
+            </svg>
+          </button>
+
+          <button class="opcion-figura" data-tipo="cuadrilateros" data-figura="c" onclick="seleccionarFiguraMultiple('cuadrilateros', 'c', event)">
+            <span class="letra-figura">c.</span>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Figura con línea curva">
+              <path d="M42 116 L54 40 C96 16, 162 34, 184 86 L170 118 Z" class="figura-curva-cerrada" />
+            </svg>
+          </button>
+
+          <button class="opcion-figura" data-tipo="cuadrilateros" data-figura="d" onclick="seleccionarFiguraMultiple('cuadrilateros', 'd', event)">
+            <span class="letra-figura">d.</span>
+            <svg class="svg-figura" viewBox="0 0 220 150" role="img" aria-label="Figura abierta parecida a cuadrado">
+              <polyline points="48,116 48,42 176,42 176,116" class="figura-abierta" />
+            </svg>
+          </button>
+        </div>
+
+        <p id="resultadoActividadCuadrilateros" class="resultado"></p>
+      </section>
+
+      </article>
+
+      <article class="subleccion subleccion-13" id="subleccion-13">
+        <div class="encabezado-subleccion">
+          <span class="etiqueta-subleccion">1.3</span>
+          <h2>Conozcamos los elementos de triángulos y cuadriláteros</h2>
+        </div>
+
+        <section class="seccion seccion-elementos bloque-teorico bloque-analiza">
+        <div class="titulo-bloque">
+          <span>Analiza</span>
+          <h2>Elementos de las figuras</h2>
+        </div>
+
+        <p class="texto">
+          Observa las figuras.
+        </p>
+
+        <div class="figuras-analiza">
+          <div class="tarjeta figura-card">
+            <h3>Triángulo irregular</h3>
+            <svg class="svg-elementos" viewBox="0 0 240 170" role="img" aria-label="Triángulo irregular sin resolver">
+              <polygon points="42,136 102,28 198,122" class="figura-poligono" />
+            </svg>
+          </div>
+
+          <div class="tarjeta figura-card">
+            <h3>Cuadrilátero irregular</h3>
+            <svg class="svg-elementos" viewBox="0 0 240 170" role="img" aria-label="Cuadrilátero irregular sin resolver">
+              <polygon points="44,132 76,34 184,48 202,134" class="figura-poligono" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion seccion-elementos solucion-elementos bloque-teorico bloque-soluciona">
+        <div class="titulo-bloque">
+          <span>Soluciona</span>
+          <h2>Al observar las figuras, pudimos reconocemos lados y vértices</h2>
+        </div>
+
+        <div class="figuras-analiza">
+          <div class="tarjeta figura-card">
+            <h3>Triángulo resuelto</h3>
+            <svg class="svg-elementos" viewBox="0 0 240 170" role="img" aria-label="Triángulo con lados y vértices coloreados">
+              <polygon points="42,136 102,28 198,122" class="figura-lados-celestes" />
+              <circle cx="42" cy="136" r="7" class="vertice-rojo" />
+              <circle cx="102" cy="28" r="7" class="vertice-rojo" />
+              <circle cx="198" cy="122" r="7" class="vertice-rojo" />
+            </svg>
+          </div>
+
+          <div class="tarjeta figura-card">
+            <h3>Cuadrilátero resuelto</h3>
+            <svg class="svg-elementos" viewBox="0 0 240 170" role="img" aria-label="Cuadrilátero con lados y vértices coloreados">
+              <polygon points="44,132 76,34 184,48 202,134" class="figura-lados-celestes" />
+              <circle cx="44" cy="132" r="7" class="vertice-rojo" />
+              <circle cx="76" cy="34" r="7" class="vertice-rojo" />
+              <circle cx="184" cy="48" r="7" class="vertice-rojo" />
+              <circle cx="202" cy="134" r="7" class="vertice-rojo" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion comprende seccion-elementos bloque-teorico bloque-comprende">
+        <div class="titulo-bloque">
+          <span>Comprende</span>
+          <h2>Lado, vértice y ángulo</h2>
+        </div>
+
+        <div class="conceptos">
+          <div class="concepto">
+            <div class="numero">1</div>
+            <p>A cada segmento que forma un triángulo o cuadrilátero se le llama lado.</p>
+          </div>
+
+          <div class="concepto">
+            <div class="numero">2</div>
+            <p>El punto donde se unen dos lados se llama vértice.</p>
+          </div>
+
+          <div class="concepto">
+            <div class="numero">3</div>
+            <p>En las figuras, a la abertura que se forma con dos lados se le llama ángulo.</p>
+          </div>
+        </div>
+
+        <div class="ejemplos-elementos">
+          <div class="tarjeta ejemplo-elemento">
+            <h3>Lado</h3>
+            <svg class="svg-elementos" viewBox="0 0 240 170" role="img" aria-label="Lado resaltado">
+              <polygon points="42,136 102,28 198,122" class="figura-base-suave" />
+              <line x1="42" y1="136" x2="102" y2="28" class="lado-resaltado" />
+              <text x="72" y="96" class="etiqueta-svg">lado</text>
+            </svg>
+          </div>
+
+          <div class="tarjeta ejemplo-elemento">
+            <h3>Vértice</h3>
+            <svg class="svg-elementos" viewBox="0 0 240 170" role="img" aria-label="Vértice resaltado">
+              <polygon points="42,136 102,28 198,122" class="figura-base-suave" />
+              <circle cx="102" cy="28" r="9" class="vertice-rojo" />
+              <text x="118" y="36" class="etiqueta-svg">vértice</text>
+            </svg>
+          </div>
+
+          <div class="tarjeta ejemplo-elemento">
+            <h3>Ángulo</h3>
+            <svg class="svg-elementos" viewBox="0 0 240 170" role="img" aria-label="Ángulo marcado">
+              <polygon points="42,136 102,28 198,122" class="figura-base-suave" />
+              <path d="M86 56 Q102 68 126 54" class="arco-angulo" />
+              <text x="132" y="62" class="etiqueta-svg">ángulo</text>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion actividad actividad-elementos bloque-resuelve bloque-evaluable">
+        <div class="titulo-bloque">
+          <span>Resuelve</span>
+          <h2>Actividad 8: Selecciona el nombre de cada elemento señalado</h2>
+        </div>
+
+        <div class="panel-elementos">
+          <svg class="svg-panel-elementos" viewBox="0 0 520 260" role="img" aria-label="Elementos señalados en triángulo y cuadrilátero">
+            <polygon points="62,210 138,48 250,198" class="figura-base-suave" />
+            <polygon points="310,206 338,62 464,76 486,208" class="figura-base-suave" />
+            <circle cx="138" cy="48" r="10" class="vertice-rojo" />
+            <line x1="310" y1="206" x2="338" y2="62" class="lado-resaltado" />
+            <path d="M430 92 Q450 120 444 154" class="arco-angulo" />
+            <text x="132" y="32" class="numero-senal">1</text>
+            <text x="302" y="132" class="numero-senal">2</text>
+            <text x="452" y="136" class="numero-senal">3</text>
+          </svg>
+        </div>
+
+        <div class="elementos-opciones-grid">
+          <div class="tarjeta grupo-elemento">
+            <h3>Elemento 1</h3>
+            <div class="opciones-elemento">
+              <button class="opcion-elemento" data-elemento="actividad13Elemento1" data-valor="lado" onclick="seleccionarElemento13('actividad13Elemento1', 'lado', event)">a. lado</button>
+              <button class="opcion-elemento" data-elemento="actividad13Elemento1" data-valor="vertice" onclick="seleccionarElemento13('actividad13Elemento1', 'vertice', event)">b. vértice</button>
+              <button class="opcion-elemento" data-elemento="actividad13Elemento1" data-valor="angulo" onclick="seleccionarElemento13('actividad13Elemento1', 'angulo', event)">c. ángulo</button>
+            </div>
+            <p id="resultadoActividad13Elemento1" class="resultado"></p>
+          </div>
+
+          <div class="tarjeta grupo-elemento">
+            <h3>Elemento 2</h3>
+            <div class="opciones-elemento">
+              <button class="opcion-elemento" data-elemento="actividad13Elemento2" data-valor="lado" onclick="seleccionarElemento13('actividad13Elemento2', 'lado', event)">a. lado</button>
+              <button class="opcion-elemento" data-elemento="actividad13Elemento2" data-valor="vertice" onclick="seleccionarElemento13('actividad13Elemento2', 'vertice', event)">b. vértice</button>
+              <button class="opcion-elemento" data-elemento="actividad13Elemento2" data-valor="angulo" onclick="seleccionarElemento13('actividad13Elemento2', 'angulo', event)">c. ángulo</button>
+            </div>
+            <p id="resultadoActividad13Elemento2" class="resultado"></p>
+          </div>
+
+          <div class="tarjeta grupo-elemento">
+            <h3>Elemento 3</h3>
+            <div class="opciones-elemento">
+              <button class="opcion-elemento" data-elemento="actividad13Elemento3" data-valor="lado" onclick="seleccionarElemento13('actividad13Elemento3', 'lado', event)">a. lado</button>
+              <button class="opcion-elemento" data-elemento="actividad13Elemento3" data-valor="vertice" onclick="seleccionarElemento13('actividad13Elemento3', 'vertice', event)">b. vértice</button>
+              <button class="opcion-elemento" data-elemento="actividad13Elemento3" data-valor="angulo" onclick="seleccionarElemento13('actividad13Elemento3', 'angulo', event)">c. ángulo</button>
+            </div>
+            <p id="resultadoActividad13Elemento3" class="resultado"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion actividad actividad-preguntas-elementos bloque-resuelve bloque-evaluable">
+        <div class="titulo-bloque">
+          <span>Resuelve</span>
+          <h2>Actividad 9: Responde las siguientes preguntas</h2>
+        </div>
+
+        <div class="preguntas-elementos-grid">
+          <div class="pregunta pregunta-compacta">
+            <label>a. ¿Cuántos lados tiene el triángulo?</label>
+            <select id="actividad13TrianguloLados">
+              <option value="">Selecciona</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <p id="resultadoactividad13TrianguloLados" class="resultado resultado-mini"></p>
+          </div>
+
+          <div class="pregunta pregunta-compacta">
+            <label>b. ¿Cuántos lados tiene el cuadrilátero?</label>
+            <select id="actividad13CuadrilateroLados">
+              <option value="">Selecciona</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <p id="resultadoactividad13CuadrilateroLados" class="resultado resultado-mini"></p>
+          </div>
+
+          <div class="pregunta pregunta-compacta">
+            <label>c. ¿Cuántos vértices tiene el triángulo?</label>
+            <select id="actividad13TrianguloVertices">
+              <option value="">Selecciona</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <p id="resultadoactividad13TrianguloVertices" class="resultado resultado-mini"></p>
+          </div>
+
+          <div class="pregunta pregunta-compacta">
+            <label>d. ¿Cuántos vértices tiene el cuadrilátero?</label>
+            <select id="actividad13CuadrilateroVertices">
+              <option value="">Selecciona</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <p id="resultadoactividad13CuadrilateroVertices" class="resultado resultado-mini"></p>
+          </div>
+
+          <div class="pregunta pregunta-compacta">
+            <label>e. ¿Cuántos ángulos tiene el triángulo?</label>
+            <select id="actividad13TrianguloAngulos">
+              <option value="">Selecciona</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <p id="resultadoactividad13TrianguloAngulos" class="resultado resultado-mini"></p>
+          </div>
+
+          <div class="pregunta pregunta-compacta">
+            <label>f. ¿Cuántos ángulos tiene el cuadrilátero?</label>
+            <select id="actividad13CuadrilateroAngulos">
+              <option value="">Selecciona</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <p id="resultadoactividad13CuadrilateroAngulos" class="resultado resultado-mini"></p>
+          </div>
+        </div>
+      </section>
+
+      </article>
+
+      <article class="subleccion subleccion-14" id="subleccion-14">
+        <div class="encabezado-subleccion">
+          <span class="etiqueta-subleccion">1.4</span>
+          <h2>Descompongamos figuras en triángulos y cuadriláteros</h2>
+        </div>
+
+        <section class="seccion seccion-compuestas bloque-teorico bloque-analiza">
+        <div class="titulo-bloque">
+          <span>Analiza</span>
+          <h2>Figuras que se pueden dividir</h2>
+        </div>
+
+        <p class="texto">
+          Si trazamos líneas de manera adecuada en las siguientes figuras, estas pueden formar triángulos y cuadriláteros.
+        </p>
+
+        <div class="figuras-analiza">
+          <div class="tarjeta figura-card">
+            <h3>Figura a</h3>
+            <svg class="svg-compuesta" viewBox="0 0 260 190" role="img" aria-label="Figura compuesta tipo casa">
+              <polygon points="46,158 46,82 130,28 214,82 214,158" class="figura-compuesta-base" />
+            </svg>
+          </div>
+
+          <div class="tarjeta figura-card">
+            <h3>Figura b</h3>
+            <svg class="svg-compuesta" viewBox="0 0 260 190" role="img" aria-label="Figura compuesta tipo barco">
+              <polygon points="38,118 82,62 174,62 222,118 190,158 68,158" class="figura-compuesta-base" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="seccion seccion-compuestas solucion-compuestas bloque-teorico bloque-soluciona">
+        <div class="titulo-bloque">
+          <span>Soluciona</span>
+          <h2>Una forma de descomponer</h2>
+        </div>
+
+        <div class="figuras-analiza">
+          <div class="tarjeta figura-card">
+            <h3>Figura a</h3>
+            <svg class="svg-compuesta" viewBox="0 0 260 190" role="img" aria-label="Casa dividida en triángulo y cuadrilátero">
+              <polygon points="46,158 46,82 130,28 214,82 214,158" class="figura-compuesta-base" />
+              <line x1="46" y1="82" x2="214" y2="82" class="division-demostrativa" />
+            </svg>
+          </div>
+
+          <div class="tarjeta figura-card">
+            <h3>Figura b</h3>
+            <svg class="svg-compuesta" viewBox="0 0 260 190" role="img" aria-label="Barco dividido en figuras simples">
+              <polygon points="38,118 82,62 174,62 222,118 190,158 68,158" class="figura-compuesta-base" />
+              <line x1="38" y1="118" x2="222" y2="118" class="division-demostrativa" />
+              <line x1="82" y1="62" x2="68" y2="158" class="division-demostrativa division-suave" />
+              <line x1="174" y1="62" x2="190" y2="158" class="division-demostrativa division-suave" />
+            </svg>
+          </div>
+        </div>
+
+        <p class="texto texto-apoyo">
+          Hay más opciones para dividir las figuras en triángulos y cuadriláteros.
+        </p>
+      </section>
+
+      <section class="seccion comprende seccion-compuestas bloque-teorico bloque-comprende">
+        <div class="titulo-bloque">
+          <span>Comprende</span>
+          <h2>Figuras compuestas</h2>
+        </div>
+
+        <div class="bloque-destacado">
+          <p>
+            Se pueden formar figuras utilizando triángulos y cuadriláteros. A estas figuras que se forman utilizando triángulos y cuadriláteros se les llama figuras compuestas.
+          </p>
+        </div>
+      </section>
+
+      <section class="seccion actividad actividad-compuestas bloque-resuelve bloque-evaluable">
+        <div class="titulo-bloque">
+          <span>Resuelve</span>
+          <h2>Actividad 10: Selecciona la línea de división para formar triángulos y cuadriláteros</h2>
+        </div>
+
+        <div class="actividad-compuestas-grid">
+          <div class="tarjeta tarjeta-compuesta">
+            <h3>Figura A</h3>
+            <svg class="svg-compuesta interactiva" viewBox="0 0 260 190" role="img" aria-label="Casa con líneas divisoras seleccionables">
+              <polygon points="46,158 46,82 130,28 214,82 214,158" class="figura-compuesta-base" />
+              <line x1="46" y1="82" x2="214" y2="82" class="linea-divisor" data-figura="figuraA" data-linea="techo" onclick="seleccionarDivision14('figuraA', 'techo', event)" />
+              <line x1="46" y1="158" x2="214" y2="82" class="linea-divisor" data-figura="figuraA" data-linea="diagonal" onclick="seleccionarDivision14('figuraA', 'diagonal', event)" />
+              <line x1="130" y1="28" x2="130" y2="158" class="linea-divisor" data-figura="figuraA" data-linea="vertical" onclick="seleccionarDivision14('figuraA', 'vertical', event)" />
+            </svg>
+            <p id="resultadoActividad14FiguraA" class="resultado"></p>
+          </div>
+
+          <div class="tarjeta tarjeta-compuesta">
+            <h3>Figura B</h3>
+            <svg class="svg-compuesta interactiva" viewBox="0 0 280 190" role="img" aria-label="Carro con líneas divisoras seleccionables">
+              <polygon points="34,118 72,82 104,52 176,52 208,82 246,118 226,150 54,150" class="figura-compuesta-base" />
+              <polygon points="74,150 98,150 98,174 74,174" class="figura-rueda" />
+              <polygon points="184,150 208,150 208,174 184,174" class="figura-rueda" />
+              <line x1="34" y1="118" x2="246" y2="118" class="linea-divisor" data-figura="figuraB" data-linea="cabina" onclick="seleccionarDivision14('figuraB', 'cabina', event)" />
+              <line x1="104" y1="52" x2="98" y2="150" class="linea-divisor" data-figura="figuraB" data-linea="izquierda" onclick="seleccionarDivision14('figuraB', 'izquierda', event)" />
+              <line x1="176" y1="52" x2="184" y2="150" class="linea-divisor" data-figura="figuraB" data-linea="derecha" onclick="seleccionarDivision14('figuraB', 'derecha', event)" />
+            </svg>
+            <p id="resultadoActividad14FiguraB" class="resultado"></p>
+          </div>
+        </div>
+      </section>
+
+      </article>
+
+      <section class="seccion final">
+        <div class="tarjeta-final">
+          <h2>Finalizar actividades</h2>
+          <p>Cuando termines todas las actividades, guarda tus respuestas y revisa tu nota.</p>
+
+          <button id="btnVerResultado" onclick="mostrarResultadoFinal()">Ver resultado</button>
+          <p id="progresoExamen" class="progreso-examen advertencia-progreso">Progreso: 0 de 23 respuestas completadas.</p>
+          <p id="mensajeFinal" class="mensaje"></p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <section class="seccion pantalla-resultado oculto-pagina" id="pantallaResultado">
+    <div class="tarjeta-resultado">
+      <h2>Resultado final</h2>
+      <p id="nombreResultado" class="mensaje-nombre"></p>
+
+      <div class="circulo-puntaje" id="circuloPuntaje">
+        <div>
+          <span id="puntajeResultado">0</span>
+          <small>de 10</small>
+        </div>
+      </div>
+
+      <div class="resumen-resultados">
+        <div>
+          <span id="correctasResultado">0</span>
+          <p>Correctas</p>
+        </div>
+        <div>
+          <span id="incorrectasResultado">0</span>
+          <p>Incorrectas</p>
+        </div>
+        <div>
+          <span id="totalResultado">0</span>
+          <p>Total</p>
+        </div>
+      </div>
+
+      <div class="acciones-resultado">
+        <button onclick="verRespuestas()">Ver respuestas</button>
+        <button class="btn-secundario" onclick="volverAIntentar()">Volver a intentar</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
 </body>
 </html>
