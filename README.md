@@ -15,9 +15,8 @@ Aplicación web interactiva para trabajar la lección "Aprendamos sobre figuras 
 
 Crear archivo .env con:
 
-DB_HOST=127.0.0.1
+DB_HOST=localhost
 DB_USER=root
-DB_PASSWORD=tu_password
-DB_NAME=nombre_de_tu_base
+DB_PASSWORD=backopp9
+DB_NAME=db_appfirst
 DB_PORT=3306
-PORT=3000
